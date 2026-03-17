@@ -46,7 +46,7 @@ export function BPOSTile({ onClick }: { onClick: () => void }) {
           font-weight: var(--font-semibold);
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: #000;
+          color: #FDFBF7;
           background: var(--accent);
           padding: 2px 8px;
           border-radius: 4px;

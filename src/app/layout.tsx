@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 
   other: {
-    "theme-color": "#0a0a0a",
+    "theme-color": "#F5F0E8",
   },
 }
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme="light">
       <head>
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

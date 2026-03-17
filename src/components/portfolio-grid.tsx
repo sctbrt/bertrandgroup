@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { BPOSTile } from "./bpos-tile"
 
 const divisions = [
   {
@@ -13,13 +12,12 @@ const divisions = [
     wordmark: "/assets/bertrand-brands-wordmark-light-2026.png",
   },
   {
-    name: "Scott Bertrand",
-    role: "Principal",
+    name: "Bertrand POS Restaurant",
+    role: "Restaurant Point of Sale",
     description:
-      "Strategy, direction, and leadership across all Group ventures.",
-    href: "https://scottbertrand.com",
-    linkText: "scottbertrand.com",
-    wordmark: "/assets/scott-bertrand-logo-wordmark-light.png",
+      "Offline-first, full-suite POS for dine-in, bar, and takeout. Runs on any device.",
+    href: "https://bertrandbrands.ca/bpos",
+    linkText: "bertrandbrands.ca/bpos",
   },
 ]
 
@@ -30,7 +28,7 @@ const placeholders = [
   },
 ]
 
-export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
+export function PortfolioGrid() {
   return (
     <section className="bg-section bg-fade">
       <div className="bg-container">
@@ -62,14 +60,16 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
                     className="bg-portfolio__wordmark bg-portfolio__wordmark--lockup"
                   />
                 </div>
-              ) : (
+              ) : div.wordmark ? (
                 <Image
-                  src={div.wordmark!}
+                  src={div.wordmark}
                   alt={div.name}
                   width={160}
                   height={24}
                   className="bg-portfolio__wordmark"
                 />
+              ) : (
+                <span className="bg-portfolio__tile-name">{div.name}</span>
               )}
               <p className="bg-portfolio__role">{div.role}</p>
               <p className="bg-portfolio__desc">{div.description}</p>
@@ -78,8 +78,6 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
               </span>
             </a>
           ))}
-
-          <BPOSTile onClick={onBPOSClick} />
 
           {placeholders.map((ph) => (
             <div
@@ -106,7 +104,7 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
           font-family: var(--font-body);
           font-size: var(--text-xs);
           font-weight: var(--font-medium);
-          color: var(--text-subtle);
+          color: var(--blueprint-line);
           text-transform: uppercase;
           letter-spacing: 0.15em;
           margin-bottom: var(--space-lg);
@@ -119,29 +117,49 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
         .bg-portfolio__tile {
           position: relative;
           background: var(--bg-elevated);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
+          border: 1px solid var(--blueprint-line-medium);
+          border-radius: 2px;
           padding: var(--space-lg);
           display: flex;
           flex-direction: column;
           gap: var(--space-sm);
           transition: border-color var(--duration-fast) ease,
-                      transform var(--duration-fast) ease,
                       box-shadow var(--duration-fast) ease;
         }
+        .bg-portfolio__tile::before,
+        .bg-portfolio__tile::after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-color: var(--blueprint-crosshair);
+          border-style: solid;
+          border-width: 0;
+        }
+        .bg-portfolio__tile::before {
+          top: -1px;
+          left: -1px;
+          border-top-width: 1px;
+          border-left-width: 1px;
+        }
+        .bg-portfolio__tile::after {
+          bottom: -1px;
+          right: -1px;
+          border-bottom-width: 1px;
+          border-right-width: 1px;
+        }
         .bg-portfolio__tile:hover {
-          border-color: var(--border-hover);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.4);
+          border-color: var(--blueprint-line);
+          box-shadow: 0 2px 12px -4px rgba(107, 135, 168, 0.15);
         }
         .bg-portfolio__tile--placeholder {
           border-style: dashed;
-          opacity: 0.5;
+          border-color: var(--blueprint-line-light);
+          opacity: 0.6;
           cursor: default;
         }
         .bg-portfolio__tile--placeholder:hover {
-          border-color: var(--border);
-          transform: none;
+          border-color: var(--blueprint-line-light);
           box-shadow: none;
         }
         .bg-portfolio__lockup {
@@ -155,11 +173,12 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
           height: 24px;
           opacity: 0.9;
           flex-shrink: 0;
+          filter: brightness(0.15);
         }
         .bg-portfolio__divider {
           width: 1px;
           height: 20px;
-          background: rgba(255, 255, 255, 0.15);
+          background: var(--blueprint-line-light);
           flex-shrink: 0;
         }
         .bg-portfolio__wordmark {
@@ -170,6 +189,7 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
           object-position: left;
           opacity: 0.9;
           margin-bottom: var(--space-sm);
+          filter: brightness(0.15);
         }
         .bg-portfolio__wordmark--lockup {
           margin-bottom: 0;
@@ -199,6 +219,13 @@ export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
         }
         .bg-portfolio__tile:hover .bg-portfolio__link {
           color: var(--text-muted);
+        }
+        .bg-portfolio__tile-name {
+          font-family: var(--font-heading);
+          font-size: var(--text-lg);
+          font-weight: var(--font-semibold);
+          letter-spacing: 0.04em;
+          color: var(--text);
         }
         .bg-portfolio__placeholder-name {
           font-family: var(--font-display);

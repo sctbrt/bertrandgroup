@@ -2,27 +2,34 @@
 
 /* ============================================================
    BERTRAND GROUP — Design Tokens
-   Ported from Bertrand Brands tokens.css V5.0.0
+   Blueprint / Architectural Aesthetic
    ============================================================ */
 
 :root {
-  /* Backgrounds */
-  --bg: #0a0a0a;
-  --bg-elevated: #111111;
-  --bg-subtle: #161616;
+  /* Backgrounds — Warm cream paper */
+  --bg: #F5F0E8;
+  --bg-elevated: #FDFBF7;
+  --bg-subtle: #EDE8DE;
 
-  /* Text */
-  --text: #fafafa;
-  --text-muted: #a3a3a3;
-  --text-subtle: #737373;
+  /* Text — Dark on cream */
+  --text: #2C2C2C;
+  --text-muted: #6B6B6B;
+  --text-subtle: #9B9B9B;
 
-  /* Accent — Amber */
+  /* Accent — Amber (interactive elements only) */
   --accent: #D97706;
   --accent-hover: #B45309;
 
-  /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
+  /* Borders — Steel-blue construction lines */
+  --border: rgba(107, 135, 168, 0.25);
+  --border-hover: rgba(107, 135, 168, 0.45);
+
+  /* Blueprint construction system */
+  --blueprint-line: #6B87A8;
+  --blueprint-line-light: rgba(107, 135, 168, 0.12);
+  --blueprint-line-medium: rgba(107, 135, 168, 0.30);
+  --blueprint-dot: #C4713B;
+  --blueprint-crosshair: rgba(107, 135, 168, 0.4);
 
   /* Typography */
   --font-display: 'Fraunces', Georgia, serif;
@@ -49,8 +56,8 @@
   --duration-fast: 0.3s;
   --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
 
-  /* Borders & Radius */
-  --radius-lg: 12px;
+  /* Borders & Radius — Sharp/architectural */
+  --radius-lg: 4px;
 
   /* Font Weights */
   --font-light: 300;
@@ -90,7 +97,11 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--blueprint-line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line-light) 1px, transparent 1px);
+  background-size: 80px 80px;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

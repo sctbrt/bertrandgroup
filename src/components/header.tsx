@@ -1,10 +1,24 @@
 import Link from "next/link"
 
-export function Header({ onBPOSClick }: { onBPOSClick?: () => void }) {
+export function Header() {
   return (
     <header className="bg-header">
       <div className="bg-header__inner">
         <Link href="/" className="bg-header__logo">
+          <svg
+            className="bg-header__mark"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="2" />
+            <circle cx="16" cy="16" r="11.5" stroke="currentColor" strokeWidth="1.8" />
+            <circle cx="16" cy="16" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+            <circle cx="16" cy="16" r="5.8" stroke="currentColor" strokeWidth="1.4" />
+            <circle cx="16" cy="16" r="3.4" stroke="currentColor" strokeWidth="1.2" />
+            <circle cx="16" cy="16" r="1.2" fill="currentColor" />
+          </svg>
           <span className="bg-header__name">Bertrand Group</span>
         </Link>
         <nav className="bg-header__nav">
@@ -14,15 +28,12 @@ export function Header({ onBPOSClick }: { onBPOSClick?: () => void }) {
           >
             Studio &rarr;
           </Link>
-          {onBPOSClick && (
-            <button
-              className="bg-header__link bg-header__link--accent"
-              onClick={onBPOSClick}
-              type="button"
-            >
-              B-POS &rarr;
-            </button>
-          )}
+          <Link
+            href="https://bertrandbrands.ca/bpos"
+            className="bg-header__link bg-header__link--accent"
+          >
+            B-POS &rarr;
+          </Link>
         </nav>
       </div>
 
@@ -35,8 +46,8 @@ export function Header({ onBPOSClick }: { onBPOSClick?: () => void }) {
           z-index: 100;
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          background: rgba(10, 10, 10, 0.8);
-          border-bottom: 1px solid var(--border);
+          background: rgba(245, 240, 232, 0.85);
+          border-bottom: 1px solid var(--blueprint-line-light);
         }
         .bg-header__inner {
           max-width: 800px;
@@ -50,11 +61,18 @@ export function Header({ onBPOSClick }: { onBPOSClick?: () => void }) {
         .bg-header__logo {
           display: flex;
           align-items: center;
+          gap: 0.625rem;
+        }
+        .bg-header__mark {
+          width: 24px;
+          height: 24px;
+          color: var(--text);
+          flex-shrink: 0;
         }
         .bg-header__name {
           font-family: var(--font-heading);
           font-size: var(--text-sm);
-          font-weight: var(--font-semibold);
+          font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: var(--text);

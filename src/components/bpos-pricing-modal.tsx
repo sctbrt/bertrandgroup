@@ -30,7 +30,7 @@ const plans: PricingPlan[] = [
       "Employee PIN login",
     ],
     cta: "Start Free Trial",
-    href: "#", // Stripe payment link placeholder
+    href: "https://bertrandbrands.ca/bpos#pricing",
   },
   {
     name: "Standard",
@@ -48,7 +48,7 @@ const plans: PricingPlan[] = [
       "Employee PIN login",
     ],
     cta: "Start Free Trial",
-    href: "#",
+    href: "https://bertrandbrands.ca/bpos#pricing",
   },
   {
     name: "Pro",
@@ -68,7 +68,7 @@ const plans: PricingPlan[] = [
       "Cloud backup",
     ],
     cta: "Start Free Trial",
-    href: "#",
+    href: "https://bertrandbrands.ca/bpos#pricing",
     popular: true,
   },
   {
@@ -90,7 +90,7 @@ const plans: PricingPlan[] = [
       "Cloud backup",
     ],
     cta: "Start Free Trial",
-    href: "#",
+    href: "https://bertrandbrands.ca/bpos#pricing",
     popular: true,
   },
 ]

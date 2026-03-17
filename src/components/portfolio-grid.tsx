@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { BPOSTile } from "./bpos-tile"
 
 const divisions = [
   {
@@ -29,7 +30,7 @@ const placeholders = [
   },
 ]
 
-export function PortfolioGrid() {
+export function PortfolioGrid({ onBPOSClick }: { onBPOSClick: () => void }) {
   return (
     <section className="bg-section bg-fade">
       <div className="bg-container">
@@ -77,6 +78,8 @@ export function PortfolioGrid() {
               </span>
             </a>
           ))}
+
+          <BPOSTile onClick={onBPOSClick} />
 
           {placeholders.map((ph) => (
             <div

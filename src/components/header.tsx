@@ -1,18 +1,29 @@
 import Link from "next/link"
 
-export function Header() {
+export function Header({ onBPOSClick }: { onBPOSClick?: () => void }) {
   return (
     <header className="bg-header">
       <div className="bg-header__inner">
         <Link href="/" className="bg-header__logo">
           <span className="bg-header__name">Bertrand Group</span>
         </Link>
-        <Link
-          href="https://brands.bertrandgroup.ca"
-          className="bg-header__link"
-        >
-          Studio &rarr;
-        </Link>
+        <nav className="bg-header__nav">
+          <Link
+            href="https://brands.bertrandgroup.ca"
+            className="bg-header__link"
+          >
+            Studio &rarr;
+          </Link>
+          {onBPOSClick && (
+            <button
+              className="bg-header__link bg-header__link--accent"
+              onClick={onBPOSClick}
+              type="button"
+            >
+              B-POS &rarr;
+            </button>
+          )}
+        </nav>
       </div>
 
       <style>{`
@@ -56,8 +67,28 @@ export function Header() {
           letter-spacing: 0.02em;
           transition: color var(--duration-fast) ease;
         }
+        .bg-header__nav {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+        }
         .bg-header__link:hover {
           color: var(--text);
+        }
+        .bg-header__link--accent {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-family: var(--font-body);
+          font-size: var(--text-sm);
+          font-weight: var(--font-normal);
+          color: var(--accent);
+          letter-spacing: 0.02em;
+          padding: 0;
+          transition: color var(--duration-fast) ease;
+        }
+        .bg-header__link--accent:hover {
+          color: var(--accent-hover);
         }
         @media (max-width: 480px) {
           .bg-header__inner { height: 56px; }

@@ -122,8 +122,8 @@ export function PortfolioGrid() {
           padding: var(--space-lg);
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
+          align-items: center;
+          text-align: center;
           gap: var(--space-sm);
           transition: border-color var(--duration-fast) ease,
                       box-shadow var(--duration-fast) ease;
@@ -167,6 +167,7 @@ export function PortfolioGrid() {
         .bg-portfolio__lockup {
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 12px;
           margin-bottom: var(--space-sm);
         }
@@ -188,7 +189,7 @@ export function PortfolioGrid() {
           max-width: 100%;
           width: auto;
           object-fit: contain;
-          object-position: left;
+          object-position: center;
           opacity: 0.9;
           margin-bottom: var(--space-sm);
           filter: brightness(0.15);

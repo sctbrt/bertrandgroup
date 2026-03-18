@@ -122,6 +122,8 @@ export function PortfolioGrid() {
           padding: var(--space-lg);
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
           gap: var(--space-sm);
           transition: border-color var(--duration-fast) ease,
                       box-shadow var(--duration-fast) ease;

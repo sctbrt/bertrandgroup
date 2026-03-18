@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const divisions = [
   {
     name: "Bertrand Brands",
@@ -8,8 +6,6 @@ const divisions = [
       "Design, web, and systems work for businesses that need structure.",
     href: "https://brands.bertrandgroup.ca",
     linkText: "brands.bertrandgroup.ca",
-    logomark: "/assets/bertrand-brands-logomark.png",
-    wordmark: "/assets/bertrand-brands-wordmark-light-2026.png",
   },
   {
     name: "Bertrand POS Restaurant",
@@ -42,35 +38,7 @@ export function PortfolioGrid() {
               target={div.href.startsWith("https://brands.") ? undefined : "_blank"}
               rel={div.href.startsWith("https://brands.") ? undefined : "noopener noreferrer"}
             >
-              {div.logomark ? (
-                <div className="bg-portfolio__lockup">
-                  <Image
-                    src={div.logomark}
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="bg-portfolio__logomark"
-                  />
-                  <span className="bg-portfolio__divider" aria-hidden="true" />
-                  <Image
-                    src={div.wordmark!}
-                    alt={div.name}
-                    width={120}
-                    height={24}
-                    className="bg-portfolio__wordmark bg-portfolio__wordmark--lockup"
-                  />
-                </div>
-              ) : div.wordmark ? (
-                <Image
-                  src={div.wordmark}
-                  alt={div.name}
-                  width={160}
-                  height={24}
-                  className="bg-portfolio__wordmark"
-                />
-              ) : (
-                <span className="bg-portfolio__tile-name">{div.name}</span>
-              )}
+              <span className="bg-portfolio__tile-name">{div.name}</span>
               <p className="bg-portfolio__role">{div.role}</p>
               <p className="bg-portfolio__desc">{div.description}</p>
               <span className="bg-portfolio__link">
@@ -122,7 +90,7 @@ export function PortfolioGrid() {
           padding: var(--space-lg);
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: stretch;
           text-align: center;
           gap: var(--space-sm);
           transition: border-color var(--duration-fast) ease,
@@ -163,39 +131,6 @@ export function PortfolioGrid() {
         .bg-portfolio__tile--placeholder:hover {
           border-color: var(--blueprint-line-light);
           box-shadow: none;
-        }
-        .bg-portfolio__lockup {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          margin-bottom: var(--space-sm);
-        }
-        .bg-portfolio__logomark {
-          width: 24px;
-          height: 24px;
-          opacity: 0.9;
-          flex-shrink: 0;
-          filter: brightness(0.15);
-        }
-        .bg-portfolio__divider {
-          width: 1px;
-          height: 20px;
-          background: var(--blueprint-line-light);
-          flex-shrink: 0;
-        }
-        .bg-portfolio__wordmark {
-          height: 24px;
-          max-width: 100%;
-          width: auto;
-          object-fit: contain;
-          object-position: center;
-          opacity: 0.9;
-          margin-bottom: var(--space-sm);
-          filter: brightness(0.15);
-        }
-        .bg-portfolio__wordmark--lockup {
-          margin-bottom: 0;
         }
         .bg-portfolio__role {
           font-family: var(--font-body);

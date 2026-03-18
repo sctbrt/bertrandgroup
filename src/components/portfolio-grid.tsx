@@ -23,8 +23,8 @@ const divisions = [
 
 const placeholders = [
   {
-    name: "Hospitality",
-    status: "Coming 2026",
+    name: "Healthcare",
+    status: "Coming Soon",
   },
 ]
 
@@ -103,11 +103,11 @@ export function PortfolioGrid() {
         .bg-section__label {
           font-family: var(--font-body);
           font-size: var(--text-xs);
-          font-weight: var(--font-medium);
+          font-weight: var(--font-semibold);
           color: var(--blueprint-line);
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          margin-bottom: var(--space-lg);
+          margin-bottom: var(--space-md);
         }
         .bg-portfolio__grid {
           display: grid;
@@ -213,14 +213,14 @@ export function PortfolioGrid() {
           font-family: var(--font-body);
           font-size: var(--text-xs);
           font-weight: var(--font-normal);
-          color: var(--text-subtle);
+          color: var(--text-muted);
           letter-spacing: 0.02em;
           margin-top: auto;
           padding-top: var(--space-xs);
           transition: color var(--duration-fast) ease;
         }
         .bg-portfolio__tile:hover .bg-portfolio__link {
-          color: var(--text-muted);
+          color: var(--text);
         }
         .bg-portfolio__tile-name {
           font-family: var(--font-heading);

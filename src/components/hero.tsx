@@ -26,94 +26,94 @@ export function Hero() {
         >
           {/* ── Outer bounding rectangle ── */}
           <rect className="line-outer" x="60" y="30" width="680" height="540" rx="0"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
+            stroke="var(--blueprint-line)" strokeWidth="1.5" strokeOpacity="0.45" />
           {/* ── Inner bounding rectangle ── */}
           <rect className="line-inner" x="120" y="70" width="560" height="460" rx="0"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.2" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
 
           {/* ── Full-span horizontal guide lines ── */}
           <line className="guide" x1="0" y1="160" x2="800" y2="160"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" strokeDasharray="2 6" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="2 6" />
           <line className="guide" x1="0" y1="220" x2="800" y2="220"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.1" strokeDasharray="1 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.18" strokeDasharray="1 8" />
           <line className="guide" x1="0" y1="300" x2="800" y2="300"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
           <line className="guide" x1="0" y1="380" x2="800" y2="380"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.1" strokeDasharray="1 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.18" strokeDasharray="1 8" />
           <line className="guide" x1="0" y1="440" x2="800" y2="440"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" strokeDasharray="2 6" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="2 6" />
 
           {/* ── Full-span vertical guide lines ── */}
           <line className="guide" x1="290" y1="0" x2="290" y2="600"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" strokeDasharray="2 6" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="2 6" />
           <line className="guide" x1="400" y1="0" x2="400" y2="600"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
           <line className="guide" x1="510" y1="0" x2="510" y2="600"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" strokeDasharray="2 6" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="2 6" />
           <line className="guide" x1="345" y1="0" x2="345" y2="600"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.08" strokeDasharray="1 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.14" strokeDasharray="1 8" />
           <line className="guide" x1="455" y1="0" x2="455" y2="600"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.08" strokeDasharray="1 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.14" strokeDasharray="1 8" />
 
           {/* ── Diagonal construction lines ── */}
           <line className="guide" x1="200" y1="50" x2="600" y2="550"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.08" strokeDasharray="3 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.14" strokeDasharray="3 8" />
           <line className="guide" x1="600" y1="50" x2="200" y2="550"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.08" strokeDasharray="3 8" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.14" strokeDasharray="3 8" />
 
           {/* ── Construction circles ── */}
           {/* Large outer circle */}
           <circle className="circle-construct" cx="400" cy="300" r="200"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.2" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
           {/* B bounding circle */}
           <circle className="circle-construct" cx="400" cy="300" r="155"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.18" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.28" />
           {/* Upper bump arc */}
           <circle className="circle-construct" cx="440" cy="230" r="70"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.2" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
           {/* Lower bump arc */}
           <circle className="circle-construct" cx="440" cy="370" r="70"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.2" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
           {/* Inner dashed circle */}
           <circle className="circle-construct" cx="400" cy="300" r="100"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" strokeDasharray="3 5" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.22" strokeDasharray="3 5" />
           {/* Center circle */}
           <circle className="circle-construct" cx="400" cy="300" r="35"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.15" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.22" />
 
           {/* ── Dimension lines ── */}
           {/* Top width */}
           <line className="dim" x1="290" y1="115" x2="510" y2="115"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.35" />
           <line className="dim" x1="290" y1="110" x2="290" y2="120"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.4" />
           <line className="dim" x1="510" y1="110" x2="510" y2="120"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.4" />
           {/* Left height */}
           <line className="dim" x1="255" y1="160" x2="255" y2="440"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.35" />
           <line className="dim" x1="250" y1="160" x2="260" y2="160"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.4" />
           <line className="dim" x1="250" y1="440" x2="260" y2="440"
-            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.3" />
+            stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.4" />
           {/* Right partial height */}
           <line className="dim" x1="545" y1="220" x2="545" y2="380"
-            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.2" strokeDasharray="2 4" />
+            stroke="var(--blueprint-line)" strokeWidth="0.5" strokeOpacity="0.3" strokeDasharray="2 4" />
           <line className="dim" x1="540" y1="220" x2="550" y2="220"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.35" />
           <line className="dim" x1="540" y1="380" x2="550" y2="380"
-            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.25" />
+            stroke="var(--blueprint-line)" strokeWidth="0.75" strokeOpacity="0.35" />
 
           {/* ── Dimension labels ── */}
-          <text x="520" y="118" fill="var(--blueprint-line)" fillOpacity="0.3"
+          <text x="520" y="118" fill="var(--blueprint-line)" fillOpacity="0.45"
             fontFamily="var(--font-body)" fontSize="8" letterSpacing="0.05em">220</text>
-          <text x="258" y="305" fill="var(--blueprint-line)" fillOpacity="0.3"
+          <text x="258" y="305" fill="var(--blueprint-line)" fillOpacity="0.45"
             fontFamily="var(--font-body)" fontSize="8" letterSpacing="0.05em"
             transform="rotate(-90 258 305)">280</text>
 
           {/* ── Corner crop marks ── */}
           {/* Inner — around B area */}
-          <g stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.4">
+          <g stroke="var(--blueprint-line)" strokeWidth="1" strokeOpacity="0.55">
             <line x1="260" y1="125" x2="260" y2="145" />
             <line x1="260" y1="125" x2="280" y2="125" />
             <line x1="540" y1="125" x2="540" y2="145" />
@@ -149,13 +149,13 @@ export function Hero() {
           </g>
 
           {/* ── Measurement ruler (bottom) ── */}
-          <g fill="var(--blueprint-line)" fillOpacity="0.2">
+          <g fill="var(--blueprint-line)" fillOpacity="0.3">
             {Array.from({ length: 30 }, (_, i) => (
               <circle key={`ruler-b-${i}`} cx={150 + i * 18} cy="510" r={i % 3 === 0 ? 1.5 : 1} />
             ))}
           </g>
           {/* Measurement ruler (top) */}
-          <g fill="var(--blueprint-line)" fillOpacity="0.15">
+          <g fill="var(--blueprint-line)" fillOpacity="0.25">
             {Array.from({ length: 30 }, (_, i) => (
               <circle key={`ruler-t-${i}`} cx={150 + i * 18} cy="55" r={i % 3 === 0 ? 1.5 : 1} />
             ))}
@@ -203,7 +203,7 @@ export function Hero() {
           </g>
 
           {/* ── Intersection nodes ── */}
-          <g fill="var(--blueprint-line)" fillOpacity="0.35">
+          <g fill="var(--blueprint-line)" fillOpacity="0.5">
             <circle cx="290" cy="300" r="2.5" />
             <circle cx="510" cy="300" r="2.5" />
             <circle cx="400" cy="160" r="2.5" />

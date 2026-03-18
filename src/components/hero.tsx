@@ -4,17 +4,24 @@ import { useEffect, useRef } from "react"
 
 export function Hero() {
   const svgRef = useRef<SVGSVGElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReducedMotion || !svgRef.current) return
+    if (prefersReducedMotion || !svgRef.current || !sectionRef.current) return
 
-    const svg = svgRef.current
-    svg.classList.add("animate")
+    const hasPlayed = localStorage.getItem("bgc_intro_seen")
+
+    if (hasPlayed) {
+      sectionRef.current.classList.add("skip-intro")
+    } else {
+      svgRef.current.classList.add("animate")
+      localStorage.setItem("bgc_intro_seen", "1")
+    }
   }, [])
 
   return (
-    <section className="bg-hero">
+    <section ref={sectionRef} className="bg-hero">
       <div className="bg-hero__canvas">
         <svg
           ref={svgRef}
@@ -312,6 +319,23 @@ export function Hero() {
         }
         @keyframes dotFadeIn {
           to { opacity: 1; }
+        }
+
+        /* Skip animation on repeat visits */
+        .skip-intro .bg-hero__svg .guide,
+        .skip-intro .bg-hero__svg .line-outer,
+        .skip-intro .bg-hero__svg .line-inner,
+        .skip-intro .bg-hero__svg .circle-construct,
+        .skip-intro .bg-hero__svg .dim {
+          stroke-dasharray: none;
+          stroke-dashoffset: 0;
+        }
+        .skip-intro .bg-hero__svg g[fill="var(--blueprint-dot)"] circle {
+          opacity: 1;
+        }
+        .skip-intro .bg-hero__text {
+          opacity: 1;
+          animation: none;
         }
 
         /* Reduced motion: show everything immediately */

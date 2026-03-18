@@ -1,10 +1,8 @@
-import Link from "next/link"
-
 export function Header() {
   return (
     <header className="bg-header">
       <div className="bg-header__inner">
-        <Link href="/" className="bg-header__logo">
+        <a href="/" className="bg-header__logo">
           <svg
             className="bg-header__mark"
             viewBox="0 0 32 32"
@@ -20,20 +18,20 @@ export function Header() {
             <circle cx="16" cy="16" r="1.2" fill="currentColor" />
           </svg>
           <span className="bg-header__name">Bertrand Group</span>
-        </Link>
+        </a>
         <nav className="bg-header__nav">
-          <Link
+          <a
             href="https://brands.bertrandgroup.ca"
             className="bg-header__link"
           >
             Studio &rarr;
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://bertrandbrands.ca/bpos"
             className="bg-header__link bg-header__link--accent"
           >
             B-POS &rarr;
-          </Link>
+          </a>
         </nav>
       </div>
 
